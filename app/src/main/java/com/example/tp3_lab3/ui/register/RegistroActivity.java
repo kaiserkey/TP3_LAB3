@@ -111,7 +111,7 @@ public class RegistroActivity extends AppCompatActivity {
         Log.d("salida", "tomarFoto:  intent");
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_IMAGE_CAPTURE);
+            validarPermisos();
         } else {
             Log.d("salida", "tomarFoto");
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
